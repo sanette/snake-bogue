@@ -1,0 +1,3 @@
+(executables
+ (names snake1 snake2)
+ (libraries bogue))
