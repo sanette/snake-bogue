@@ -62,7 +62,7 @@ we have to use here the `to_pixels` utility.
 
 ### The `display_game` function
 
-See: https://github.com/sanette/snake-bogue/blob/edfeb0c1db2c5f379cebf5b5739cf821395c3060/src/snake1.ml#L47
+See: https://github.com/sanette/snake-bogue/blob/edfeb0c1db2c5f379cebf5b5739cf821395c3060/src/snake1.ml#L47-L60
 
 It is now easy to understand the changes made to this function, except
 for this tiny bit:
