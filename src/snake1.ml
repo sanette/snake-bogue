@@ -1,13 +1,11 @@
-(* BOGUE version 2 of the snake game.
+(* BOGUE version 1 of the snake game.
 
 San Vu Ngoc, 2022
 
 Adapted with minimal changes from an ocaml/javascript version by Florent
    Monnier, http://decapode314.free.fr/re/tut/ocaml-re-tut.html
 
-Version 2: this version uses Sdl_area, and Timemout for animation. It is better
-   than Version 1 in that it will not block the mainloop. In order to illustrate
-   this, we add an animated title .
+Version 1: this version uses Sdl_area, and Timemout for animation.
 
 *)
 

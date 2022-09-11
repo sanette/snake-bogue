@@ -1,11 +1,11 @@
-(* BOGUE version 3 of the snake game.
+(* BOGUE version 2 of the snake game.
 
 San Vu Ngoc, 2022
 
 Adapted with minimal changes from an ocaml/javascript version by Florent
    Monnier, http://decapode314.free.fr/re/tut/ocaml-re-tut.html
 
-Version 3: this version is more BOGUEsque. The snake is a layout composed of
+Version 2: this version is more BOGUEsque. The snake is a layout composed of
    several layouts, one for each snake "cell".  A "screen" layout is used to
    capute keyboard. This is more involved than the original version, but open
    doors to many improvements (loading images, animations, etc.).
