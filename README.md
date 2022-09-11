@@ -35,8 +35,7 @@ let ctx = Canvas.getContext canvas "2d"
 let widget = W.sdl_area ~w:width ~h:height ()
 let area = W.get_sdl_area widget
 ```
-
-Here we create a Widget contaning an Sdl_area, and extract the
+Here (above code) we create a Widget contaning an Sdl_area, and extract the
 Sdl_area object itself for further direct access.
 
 #### Rescript code
@@ -54,7 +53,6 @@ let fill_rect color (x, y) =
   let w, h = to_pixels (20, 20) in
   fill_rectangle area ~color ~w ~h (x, y)
 ```
-
 Bogue mainly works with "logical pixels" coordinates, which are then
 scaled taking into account the user's screen size (similar to
 javascript/CSS in a browser). However, the Sdl_area widget is special:
@@ -108,7 +106,7 @@ let keychange_event ev =
       | _ -> (!state.dir_snake)
 ```
 
-A general Bogue action take 3 arguments: source widget, target widget,
+A general Bogue action takes 3 arguments: source widget, target widget,
 and event. Here the source and the target are the same (the Sdl_area),
 but we don't even use them in the code of this function, that's why we
 used dummy names `_area` and `_none`.
@@ -199,11 +197,11 @@ The `screen` contains a unique widget (this is called a `resident` in
 Bogue terminology) which is a Box. It is used for displaying the
 background and listening to keystrokes.
 
-The `snake` layout has the size of the whole area. It is initially
-empty and is filled at each game iteration by the list of all snake
-segments (or "cells"). Each cell itself is a Layout containing a Box
-widget. In further versions, it will be easy to replace this box by an
-image widget.
+The `snake` layout, like `screen`, has the size of the whole area. It
+is initially empty and is filled at each game iteration by the list of
+all snake segments (or "cells"). Each cell itself is a Layout
+containing a Box widget. In further versions, it will be easy to
+replace this box by an image widget.
 
 The `fruit` layout just contains a small box widget, whose position is
 updated when necessary.
