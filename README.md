@@ -236,3 +236,7 @@ BOGUE_INT_SCALE=true dune exec ./snake1.exe
 ```
 
 ![demo](snake2b.gif)
+
+## Can you make a real game out of this?
+
+Yes, of course! stay tuned ;)
