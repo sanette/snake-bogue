@@ -18,7 +18,7 @@ event loop, so that should work!
 It turned out to be completely straightforward to adapt the rescript
 code to Bogue, using the
 [Sdl_area](http://sanette.github.io/bogue/Bogue.Sdl_area.html) widget
-everywhere Javascript graphics where required.
+everywhere Javascript graphics were required.
 
 Here is an analysis of the differences.
 
