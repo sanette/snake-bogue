@@ -20,7 +20,8 @@ code to Bogue, using the
 [Sdl_area](http://sanette.github.io/bogue/Bogue.Sdl_area.html) widget
 everywhere Javascript graphics were required.
 
-Here is an analysis of the differences.
+Here is an analysis of the differences between the original `snake.ml` code from
+http://decapode314.free.fr/re/tut/ocaml-re-tut.html and our new https://github.com/sanette/snake-bogue/blob/master/src/snake1.ml code.
 
 ### Graphics initialization
 
@@ -60,7 +61,10 @@ it was purposedly designed to access real hardware pixels. This is why
 we have to use here the `to_pixels` utility.
 
 ### The `display_game` function
-It is now easy to understand the changed made to this function, except
+
+See: https://github.com/sanette/snake-bogue/blob/edfeb0c1db2c5f379cebf5b5739cf821395c3060/src/snake1.ml#L47
+
+It is now easy to understand the changes made to this function, except
 for this tiny bit:
 
 ```ocaml
@@ -72,13 +76,15 @@ visually modified. In the case of Sdl_areas, one has to explicitely
 indicate whether the content should be refreshed onscreen or not.
 
 ### The game logic
+
 We kept exactly the same code!  (except for a small bug correction for
 detecting `game_over`).
 
 ### Keyboard events
+
 Bogue general strategy for treating events is to connect two widgets
 (source and target): each connection listens to a specific type of
-event, and execute a specific action. In this case, we have only one
+event, and executes a specific action. In this case, we have only one
 widget (the Sdl_area), but that's not a problem: we can connect it to
 itself!
 
@@ -212,8 +218,7 @@ With the rescript version, you need to write a piece of HTML to host
 the javascript and run in a browser.
 
 With Bogue, you compile the code once, as a usual ocaml program, which
-gives you a desktop application that you can run later.
-
+gives you a desktop application that you can run later. You may also compile-and-run in a single stroke with:
 ```
 dune exec ./snake1.exe
 ```
