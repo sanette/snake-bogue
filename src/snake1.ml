@@ -5,7 +5,7 @@ San Vu Ngoc, 2022
 Adapted with minimal changes from an ocaml/javascript version by Florent
    Monnier, http://decapode314.free.fr/re/tut/ocaml-re-tut.html
 
-Version 1: this version uses Sdl_area, and Timemout for animation.
+Version 1: this version uses Sdl_area, and Timeout for animation.
 
 *)
 

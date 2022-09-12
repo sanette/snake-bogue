@@ -62,10 +62,29 @@ we have to use here the `to_pixels` utility.
 
 ### The `display_game` function
 
-See: https://github.com/sanette/snake-bogue/blob/edfeb0c1db2c5f379cebf5b5739cf821395c3060/src/snake1.ml#L47-L60
+#### Rescript code
 
-It is now easy to understand the changes made to this function, except
-for this tiny bit:
+```ocaml
+let display_game state =
+  let bg_color, snake_color, fruit_color =
+    if state.game_over
+    then (red, black, green)
+    else (black, blue, red)
+  in
+  (* background *)
+  Canvas.fillStyle ctx bg_color;
+  Canvas.fillRect ctx 0 0 width height;
+
+  fill_rect fruit_color state.pos_fruit;
+  List.iter (fill_rect snake_color) state.seg_snake
+```
+
+#### Bogue code
+
+https://github.com/sanette/snake-bogue/blob/edfeb0c1db2c5f379cebf5b5739cf821395c3060/src/snake1.ml#L47-L60
+
+It is now easy to understand the changes we made to this function,
+except maybe for this tiny bit:
 
 ```ocaml
 Sdl_area.update area
@@ -83,7 +102,7 @@ detecting `game_over`).
 ### Keyboard events
 
 Bogue general strategy for treating events is to connect two widgets
-(source and target): each connection listens to a specific type of
+(source and target, see [here](http://sanette.github.io/bogue/Principles.html#widgets-and-connections) and [there](http://sanette.github.io/bogue/Bogue.Widget.html#connections)): each connection listens to a specific type of
 event, and executes a specific action. In this case, we have only one
 widget (the Sdl_area), but that's not a problem: we can connect it to
 itself!
@@ -118,7 +137,8 @@ but we don't even use them in the code of this function, that's why we
 used dummy names `_area` and `_none`.
 
 ### Game loop (animation)
-This games runs at a constant rate (here 7 frames per seconds). So we
+
+This game runs at a constant rate (here 7 frames per seconds). So we
 need a way to regularly update the game state, and graphics, while
 listening to keystrokes.
 
@@ -188,10 +208,14 @@ is very simple to understand, but somehow ignores interesting
 graphical features provided by other Bogue widgets.
 
 In this new version, we abandon the Sdl_area and build the snake as a
-list of Image widgets. Although this might seem more involved, it is
+list of Box widgets. Although this might seem more involved, it is
 certainly closer to Bogue spirit. This enables interesting features
 like animating each snake segment using Bogue internal animation
 mechanism. (This will be developped in another project).
+
+Here is the code for this second version:
+
+https://github.com/sanette/snake-bogue/blob/master/src/snake2.ml
 
 The final layout is a superposition of 3 layouts:
 
