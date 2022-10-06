@@ -263,4 +263,4 @@ BOGUE_INT_SCALE=true dune exec ./snake1.exe
 
 ## Can you make a real game out of this?
 
-Yes, of course! stay tuned ;)
+Yes, of course! It's there: https://github.com/sanette/snoke
